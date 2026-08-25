@@ -1,6 +1,6 @@
 {
-    "name": "birthday_app",
-    "short_name": "birthday_app",
+    "name": "Happy Birthday Binita",
+    "short_name": "Binita's Birthday",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

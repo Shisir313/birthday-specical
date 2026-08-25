@@ -7,15 +7,15 @@ import 'package:google_fonts/google_fonts.dart';
 // No chewie: custom controls prevent the raw <video>
 // element from leaking through on web.
 // ─────────────────────────────────────────────────
-class BishakhaVideoPlayer extends StatefulWidget {
+class BinitaVideoPlayer extends StatefulWidget {
   final String assetPath;
-  const BishakhaVideoPlayer({super.key, required this.assetPath});
+  const BinitaVideoPlayer({super.key, required this.assetPath});
 
   @override
-  State<BishakhaVideoPlayer> createState() => _BishakhaVideoPlayerState();
+  State<BinitaVideoPlayer> createState() => _BinitaVideoPlayerState();
 }
 
-class _BishakhaVideoPlayerState extends State<BishakhaVideoPlayer>
+class _BinitaVideoPlayerState extends State<BinitaVideoPlayer>
     with SingleTickerProviderStateMixin {
   VideoPlayerController? _controller;
   bool _started = false; // user tapped play at least once
@@ -377,7 +377,7 @@ class _BishakhaVideoPlayerState extends State<BishakhaVideoPlayer>
           ),
           const SizedBox(height: 4),
           Text(
-            "assets/videos/bishakha.mp4",
+            "assets/videos/binita.mp4",
             style: GoogleFonts.poppins(color: Colors.white30, fontSize: 10),
           ),
         ],
@@ -558,7 +558,7 @@ class _CinematicFrame extends StatelessWidget {
         _dot(const Color(0xFFFF3CAC)),
         const SizedBox(width: 8),
         Text(
-          'just for you, Bishakha',
+          'just for you, Binita',
           style: GoogleFonts.poppins(
             fontSize: 10,
             color: Colors.white30,

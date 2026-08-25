@@ -29,7 +29,7 @@ const _cards = [
     label: 'Soft & Sweet',
     title: 'You are one of a kind',
     message:
-        'In a world full of ordinary,\nyou walk in like a whole season.\nNot spring, not summer —\nbut something rare and unforgettable.\nHappy 21st, Bishakha. 🌸',
+        'In a world full of ordinary,\nyou walk in like a whole season.\nNot spring, not summer —\nbut something rare and unforgettable.\nHappy 21st, Binita. 🌸',
     gradient: [Color(0xFFFDA085), Color(0xFFF093FB)],
     borderColor: Color(0xFFF093FB),
   ),
@@ -65,7 +65,7 @@ const _cards = [
     label: 'From the Heart',
     title: 'A letter just for you',
     message:
-        'Dear Bishakha,\nThe world got a little better the day\nyou decided to be you.\nDon\'t ever shrink yourself for anyone.\nYou deserve every good thing —\nall of it, fully, without apology. 💌',
+        'Dear Binita,\nThe world got a little better the day\nyou decided to be you.\nDon\'t ever shrink yourself for anyone.\nYou deserve every good thing —\nall of it, fully, without apology. 💌',
     gradient: [Color(0xFFFF3CAC), Color(0xFF784BA0)],
     borderColor: Color(0xFFFF3CAC),
   ),
@@ -83,7 +83,7 @@ const _cards = [
     label: 'Free Spirit',
     title: 'Flow & flourish',
     message:
-        'Be like water, Bishakha —\ncalm when you need to be,\nwild when you want to be,\nand always finding your way.\nThe ocean doesn\'t apologize\nfor its waves. 🌊',
+        'Be like water, Binita —\ncalm when you need to be,\nwild when you want to be,\nand always finding your way.\nThe ocean doesn\'t apologize\nfor its waves. 🌊',
     gradient: [Color(0xFF2193B0), Color(0xFF6DD5FA)],
     borderColor: Color(0xFF6DD5FA),
   ),
@@ -560,7 +560,7 @@ class _CardPickerSectionState extends State<CardPickerSection>
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'Happy 21st Birthday\nBishakha Timalshina 🌸',
+                    'Happy 21st Birthday\nBinita Lungba 🌸',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 13,

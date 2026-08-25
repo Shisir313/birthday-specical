@@ -61,7 +61,7 @@ class _PuzzleGatedVideoState extends State<PuzzleGatedVideo>
           opacity: _unlockFade,
           child: ScaleTransition(scale: _unlockScale, child: child),
         ),
-        child: BishakhaVideoPlayer(assetPath: widget.assetPath),
+        child: BinitaVideoPlayer(assetPath: widget.assetPath),
       );
     }
 
@@ -253,7 +253,7 @@ class _LockedPosterState extends State<_LockedPoster>
 }
 
 // ─────────────────────────────────────────────────
-// 3×3 Sliding tile puzzle — uses Bishakha's photo
+// 3×3 Sliding tile puzzle — uses Binita's photo
 // ─────────────────────────────────────────────────
 class _SlidingPuzzle extends StatefulWidget {
   final VoidCallback onSolved;
@@ -528,7 +528,7 @@ class _SlidingPuzzleState extends State<_SlidingPuzzle>
                                     maxHeight: bc.maxHeight * _size,
                                     alignment: Alignment(alignX, alignY),
                                     child: Image.asset(
-                                      'assets/images/bishakha.jpg',
+                                      'assets/images/binita.jpg',
                                       width: bc.maxWidth * _size,
                                       height: bc.maxHeight * _size,
                                       fit: BoxFit.cover,

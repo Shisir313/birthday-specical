@@ -22,22 +22,16 @@ class _Q {
 
 const _questions = [
   _Q(
-    question: "Where's your favourite place to eat keema noodles? 🍜",
-    options: ["Momo Mania", "Binus", "Foodzone", "Street Corner"],
+    question: "Where did we first meet? 🤝",
+    options: ["Library", "Emerald", "Canteen", "Online"],
     correct: 1,
-    hint: "Think of your campus canteen days 😏",
+    hint: "It's a place with a name, not a thing �",
   ),
   _Q(
-    question: "Where did you first meet your friend? 🤝",
-    options: ["Library", "Megha", "Canteen", "Online"],
-    correct: 1,
-    hint: "It's a place with a name, not a thing 😊",
-  ),
-  _Q(
-    question: "What's your most favourite relationship in the world? 💞",
-    options: ["Friends", "Partner", "Family", "Herself"],
-    correct: 2,
-    hint: "Blood is thicker than water 🥰",
+    question: "Are you happy? 💞",
+    options: ["Yes", "Yes", "Yes", "Yes"],
+    correct: 0,
+    hint: "There's only one answer here 🥰",
   ),
 ];
 
@@ -216,7 +210,7 @@ class _VirtualHugSectionState extends State<VirtualHugSection>
         ),
         const SizedBox(height: 6),
         Text(
-          'only Bishakha can unlock this 🔐',
+          'only Binita can unlock this 🔐',
           style: GoogleFonts.poppins(fontSize: 12, color: Colors.white30),
         ),
       ],
@@ -264,7 +258,7 @@ class _VirtualHugSectionState extends State<VirtualHugSection>
             ),
             const SizedBox(height: 16),
             Text(
-              'Hey Bishakha! 🌸',
+              'Hey Binita! 🌸',
               style: GoogleFonts.pacifico(fontSize: 20, color: Colors.white),
             ),
             const SizedBox(height: 10),
@@ -676,8 +670,8 @@ class _VirtualHugSectionState extends State<VirtualHugSection>
                   ),
                   child: Text(
                     perfect
-                        ? 'Bishakha,\n\nYou know yourself so well! 🌸\n\nThis is a warm, tight virtual hug\ncoming straight from the heart. 🫂\n\nYou deserve every bit of joy today.\nHappy 21st Birthday! ✨💖'
-                        : 'Bishakha,\n\nNot a perfect score — but close! 🥰\nYou still get all the love.\n\nSending you warmth & the biggest\nvirtual hug on your special day. 🤗💖',
+                        ? 'Binita,\n\nYou know yourself so well! 🌸\n\nThis is a warm, tight virtual hug\ncoming straight from the heart. 🫂\n\nYou deserve every bit of joy today.\nHappy 21st Birthday! ✨💖'
+                        : 'Binita,\n\nNot a perfect score — but close! 🥰\nYou still get all the love.\n\nSending you warmth & the biggest\nvirtual hug on your special day. 🤗💖',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 14,

@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:confetti/confetti.dart';
-import 'bishakha_screen.dart';
+import 'binita_screen.dart';
 
 class SurpriseScreen extends StatefulWidget {
   const SurpriseScreen({super.key});
@@ -152,7 +152,7 @@ class _SurpriseScreenState extends State<SurpriseScreen>
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           transitionDuration: const Duration(milliseconds: 900),
-          pageBuilder: (_, __, ___) => const BishakhaScreen(),
+          pageBuilder: (_, __, ___) => const BinitaScreen(),
           transitionsBuilder: (_, anim, __, child) =>
               FadeTransition(opacity: anim, child: child),
         ),

@@ -367,7 +367,7 @@ class _CountdownScreenState extends State<CountdownScreen>
 
         // Tiny footer
         Text(
-          '✨  Happy Birthday Bishakha  ✨',
+          '✨  Happy Birthday Binita  ✨',
           style: GoogleFonts.poppins(
             fontSize: 11,
             color: Colors.white24,

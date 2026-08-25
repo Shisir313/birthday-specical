@@ -113,7 +113,7 @@ class _SparkleRingPainter extends CustomPainter {
   bool shouldRepaint(_SparkleRingPainter old) => old.intensity != intensity;
 }
 
-/// Shows Bishakha's photo inside the glow frame.
+/// Shows Binita's photo inside the glow frame.
 class PhotoPlaceholder extends StatelessWidget {
   const PhotoPlaceholder({super.key});
 
@@ -121,7 +121,7 @@ class PhotoPlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipOval(
       child: Image.asset(
-        'assets/images/bishakha.jpg',
+        'assets/images/binita.jpg',
         width: 176,
         height: 176,
         fit: BoxFit.cover,

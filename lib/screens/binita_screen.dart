@@ -10,14 +10,14 @@ import '../widgets/card_picker_widget.dart';
 import '../widgets/puzzle_widget.dart';
 import '../widgets/virtual_hug_widget.dart';
 
-class BishakhaScreen extends StatefulWidget {
-  const BishakhaScreen({super.key});
+class BinitaScreen extends StatefulWidget {
+  const BinitaScreen({super.key});
 
   @override
-  State<BishakhaScreen> createState() => _BishakhaScreenState();
+  State<BinitaScreen> createState() => _BinitaScreenState();
 }
 
-class _BishakhaScreenState extends State<BishakhaScreen>
+class _BinitaScreenState extends State<BinitaScreen>
     with TickerProviderStateMixin {
   late ConfettiController _confettiController;
   late ConfettiController _confettiController2;
@@ -30,10 +30,10 @@ class _BishakhaScreenState extends State<BishakhaScreen>
 
   int _currentWish = 0;
   final List<String> _wishes = [
-    "To the girl who makes every room brighter ✨\nHappy 21st Birthday, Bishakha! 🎂",
+    "To the girl who makes every room brighter ✨\nHappy 21st Birthday, Binita! 🎂",
     "21 years of being absolutely amazing 💫\nThe world is lucky to have you 🌸",
-    "From girl to queen — officially 21 👑\nYour best chapter starts today! 📖",
-    "21 looks stunning on you, Bishakha 🌷\nHere's to love, laughter & magic! 🥂",
+    "Wishing you endless joy and adventures 🎈\nYour journey is just beginning! 🌟",
+    "21 looks stunning on you, Binita 🌷\nHere's to love, laughter & magic! 🥂",
   ];
 
   @override
@@ -105,20 +105,34 @@ class _BishakhaScreenState extends State<BishakhaScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0517),
       body: Stack(
         children: [
-          // Deep purple/rose gradient background
+          // New modern gradient background
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF1A0530),
-                  Color(0xFF2D0B4E),
-                  Color(0xFF1A0B2E),
-                  Color(0xFF0D0517),
+                  Color(0xFF667EEA), // Soft blue-purple
+                  Color(0xFF764BA2), // Purple
+                  Color(0xFFF093FB), // Light pink
+                  Color(0xFF4FACFE), // Sky blue
+                ],
+                stops: [0.0, 0.3, 0.6, 1.0],
+              ),
+            ),
+          ),
+
+          // Overlay pattern
+          Container(
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                center: Alignment.topRight,
+                radius: 1.5,
+                colors: [
+                  Colors.white.withValues(alpha: 0.1),
+                  Colors.transparent,
                 ],
               ),
             ),
@@ -145,17 +159,17 @@ class _BishakhaScreenState extends State<BishakhaScreen>
           // Main content
           SafeArea(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 20),
 
-                  // Top "21" badge
+                  // Top "21" badge with new style
                   _build21Badge(),
 
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
 
-                  // Photo frame
+                  // Photo frame with floating animation
                   AnimatedBuilder(
                     animation: _floatY,
                     builder: (context, child) => Transform.translate(
@@ -172,51 +186,59 @@ class _BishakhaScreenState extends State<BishakhaScreen>
                     ),
                   ),
 
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 24),
 
-                  // Name with shimmer
+                  // Name with new gradient
                   ShaderMask(
                     shaderCallback: (bounds) => const LinearGradient(
                       colors: [
-                        Color(0xFFFFD6E7),
-                        Color(0xFFFF6FB4),
-                        Color(0xFFFFD6E7),
+                        Color(0xFFFFFFFF),
+                        Color(0xFFFFF9C4),
+                        Color(0xFFFFFFFF),
                       ],
                       stops: [0.0, 0.5, 1.0],
                     ).createShader(bounds),
                     child: Text(
-                      "Bishakha Timalshina",
+                      "Binita Lungba",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.greatVibes(
-                        fontSize: 42,
+                      style: GoogleFonts.dancingScript(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        letterSpacing: 1.5,
+                        letterSpacing: 1.2,
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 8),
 
-                  // Hearts row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(5, (i) {
-                      return AnimatedBuilder(
-                        animation: _heartScale,
-                        builder: (context, child) => Transform.scale(
-                          scale: i == 2 ? _heartScale.value : 1.0,
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 3),
-                            child: Text("💗", style: TextStyle(fontSize: 18)),
-                          ),
-                        ),
-                      );
-                    }),
+                  // Subtitle
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFF8E7).withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: const Color(0xFFFFF8E7).withValues(alpha: 0.5),
+                      ),
+                    ),
+                    child: Text(
+                      "✨ Forever Young & Amazing ✨",
+                      style: GoogleFonts.inter(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
                   ),
 
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 32),
 
-                  // Wish card
+                  // Wish card with new design
                   _buildWishCard(),
 
                   const SizedBox(height: 28),
@@ -236,7 +258,7 @@ class _BishakhaScreenState extends State<BishakhaScreen>
 
                   const SizedBox(height: 28),
 
-                  // "21 things" section
+                  // "21 things" section with new style
                   _build21Things(),
 
                   const SizedBox(height: 28),
@@ -244,7 +266,7 @@ class _BishakhaScreenState extends State<BishakhaScreen>
                   // Celebrate button
                   _buildCelebrateButton(),
 
-                  const SizedBox(height: 36),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
@@ -259,37 +281,46 @@ class _BishakhaScreenState extends State<BishakhaScreen>
       animation: _glowPulse,
       builder: (context, child) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+          padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFFFF6FB4), Color(0xFFFF3CAC)],
-            ),
+            color: const Color(0xFFFFF8E7), // Soft creamy beige
             borderRadius: BorderRadius.circular(50),
             boxShadow: [
               BoxShadow(
                 color: const Color(
-                  0xFFFF6FB4,
-                ).withValues(alpha: _glowPulse.value * 0.7),
-                blurRadius: 25,
-                spreadRadius: 4,
+                  0xFFFFF8E7,
+                ).withValues(alpha: _glowPulse.value * 0.8),
+                blurRadius: 30,
+                spreadRadius: 5,
+              ),
+              BoxShadow(
+                color: const Color(0xFF764BA2).withValues(alpha: 0.3),
+                blurRadius: 15,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text("🎂", style: TextStyle(fontSize: 22)),
-              const SizedBox(width: 10),
-              Text(
-                "Turning 21!",
-                style: GoogleFonts.pacifico(
-                  fontSize: 22,
-                  color: Colors.white,
-                  letterSpacing: 1,
+              const Text("🎉", style: TextStyle(fontSize: 24)),
+              const SizedBox(width: 12),
+              ShaderMask(
+                shaderCallback: (bounds) => const LinearGradient(
+                  colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                ).createShader(bounds),
+                child: Text(
+                  "Happy 21st Birthday!",
+                  style: GoogleFonts.poppins(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 0.5,
+                  ),
                 ),
               ),
-              const SizedBox(width: 10),
-              const Text("🎂", style: TextStyle(fontSize: 22)),
+              const SizedBox(width: 12),
+              const Text("🎉", style: TextStyle(fontSize: 24)),
             ],
           ),
         );
@@ -302,62 +333,60 @@ class _BishakhaScreenState extends State<BishakhaScreen>
       duration: const Duration(milliseconds: 800),
       transitionBuilder: (child, anim) => FadeTransition(
         opacity: anim,
-        child: SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(0, 0.1),
-            end: Offset.zero,
-          ).animate(anim),
-          child: child,
-        ),
+        child: ScaleTransition(scale: anim, child: child),
       ),
       child: Container(
         key: ValueKey(_currentWish),
         width: double.infinity,
-        padding: const EdgeInsets.all(28),
+        padding: const EdgeInsets.all(32),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              const Color(0xFFFF6FB4).withValues(alpha: 0.2),
-              const Color(0xFF9B59B6).withValues(alpha: 0.15),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(28),
-          border: Border.all(
-            color: const Color(0xFFFF6FB4).withValues(alpha: 0.5),
-            width: 1.5,
-          ),
+          color: const Color(
+            0xFFFFF8E7,
+          ).withValues(alpha: 0.98), // Soft creamy color
+          borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFFFF6FB4).withValues(alpha: 0.15),
+              color: const Color(0xFF764BA2).withValues(alpha: 0.3),
               blurRadius: 30,
-              spreadRadius: 2,
+              spreadRadius: 3,
+              offset: const Offset(0, 8),
             ),
           ],
         ),
         child: Column(
           children: [
-            Text(
-              "✨  Birthday Wish  ✨",
-              style: GoogleFonts.poppins(
-                fontSize: 13,
-                color: const Color(0xFFFF6FB4),
-                fontWeight: FontWeight.w600,
-                letterSpacing: 2,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                "✨  Birthday Wish  ✨",
+                style: GoogleFonts.inter(
+                  fontSize: 12,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.5,
+                ),
               ),
             ),
-            const SizedBox(height: 14),
+            const SizedBox(height: 20),
             Text(
               _wishes[_currentWish],
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.inter(
                 fontSize: 16,
-                color: Colors.white.withValues(alpha: 0.9),
+                color: const Color(
+                  0xFF4A3728,
+                ), // Warm dark brown for better contrast
                 height: 1.8,
+                fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
             // Dot indicators
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -365,12 +394,17 @@ class _BishakhaScreenState extends State<BishakhaScreen>
                 return AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
                   margin: const EdgeInsets.symmetric(horizontal: 4),
-                  width: _currentWish == i ? 20 : 8,
+                  width: _currentWish == i ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(
+                    gradient: _currentWish == i
+                        ? const LinearGradient(
+                            colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                          )
+                        : null,
                     color: _currentWish == i
-                        ? const Color(0xFFFF6FB4)
-                        : Colors.white.withValues(alpha: 0.3),
+                        ? null
+                        : const Color(0xFF667EEA).withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 );
@@ -383,65 +417,90 @@ class _BishakhaScreenState extends State<BishakhaScreen>
   }
 
   Widget _buildVideoSection() {
-    return const PuzzleGatedVideo(assetPath: 'assets/videos/bishakha.mp4');
+    return const PuzzleGatedVideo(assetPath: 'assets/videos/binita.mp4');
   }
 
   Widget _build21Things() {
     final items = [
-      ("🌟", "Start of your best decade"),
+      ("🌟", "Start of your best decade yet"),
       ("💃", "Dance like nobody's watching"),
-      ("🌸", "Bloom in your own time"),
+      ("🌸", "Bloom beautifully in your own time"),
       ("🎯", "Chase every dream fearlessly"),
-      ("☕", "Enjoy every little moment"),
-      ("🦋", "You've grown into something beautiful"),
+      ("☕", "Savor every little moment"),
+      ("🦋", "You've transformed into something magical"),
     ];
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Center(
-          child: ShaderMask(
+    return Container(
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: const Color(
+          0xFFFFF8E7,
+        ).withValues(alpha: 0.95), // Soft creamy beige
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF764BA2).withValues(alpha: 0.2),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          ShaderMask(
             shaderCallback: (b) => const LinearGradient(
-              colors: [Color(0xFFFF6FB4), Color(0xFFFFD6E7)],
+              colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
             ).createShader(b),
             child: Text(
-              "21 & Thriving 🌷",
-              style: GoogleFonts.pacifico(fontSize: 24, color: Colors.white),
+              "✨ 21 & Thriving ✨",
+              style: GoogleFonts.poppins(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
-        const SizedBox(height: 16),
-        ...items.map((item) => _buildListItem(item.$1, item.$2)),
-      ],
+          const SizedBox(height: 20),
+          ...items.map((item) => _buildListItem(item.$1, item.$2)),
+        ],
+      ),
     );
   }
 
   Widget _buildListItem(String emoji, String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
           Container(
-            width: 42,
-            height: 42,
+            width: 48,
+            height: 48,
             decoration: BoxDecoration(
-              color: const Color(0xFFFF6FB4).withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: const Color(0xFFFF6FB4).withValues(alpha: 0.3),
+              gradient: const LinearGradient(
+                colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
               ),
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF667EEA).withValues(alpha: 0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
             child: Center(
-              child: Text(emoji, style: const TextStyle(fontSize: 20)),
+              child: Text(emoji, style: const TextStyle(fontSize: 22)),
             ),
           ),
-          const SizedBox(width: 14),
+          const SizedBox(width: 16),
           Expanded(
             child: Text(
               text,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.inter(
                 fontSize: 15,
-                color: Colors.white.withValues(alpha: 0.85),
+                color: const Color(0xFF4A3728), // Warm dark brown
+                fontWeight: FontWeight.w500,
+                height: 1.4,
               ),
             ),
           ),
@@ -461,33 +520,29 @@ class _BishakhaScreenState extends State<BishakhaScreen>
         builder: (context, child) {
           return Container(
             width: double.infinity,
-            height: 62,
+            height: 64,
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [
-                  Color(0xFFFF3CAC),
-                  Color(0xFF784BA0),
-                  Color(0xFF2B86C5),
-                ],
+                colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
               ),
-              borderRadius: BorderRadius.circular(31),
+              borderRadius: BorderRadius.circular(32),
               boxShadow: [
                 BoxShadow(
                   color: const Color(
-                    0xFFFF3CAC,
+                    0xFF667EEA,
                   ).withValues(alpha: _glowPulse.value * 0.6),
-                  blurRadius: 25,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 6),
+                  blurRadius: 30,
+                  spreadRadius: 3,
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),
             child: Center(
               child: Text(
-                "🎊  Celebrate Bishakha!  🎊",
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
+                "🎊  Celebrate Binita!  🎊",
+                style: GoogleFonts.inter(
+                  fontSize: 19,
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
                   letterSpacing: 0.5,
                 ),
